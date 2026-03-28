@@ -1,6 +1,7 @@
 const startBtn = document.getElementById("startBtn");
 const cameraScreen = document.getElementById("cameraScreen");
-const bgMusic = document.getElementById("bgMusic");
+const heroStartModal = document.getElementById("heroStartModal");
+const heroStartBackdrop = document.getElementById("heroStartBackdrop");
 
 const cameraHelpBtn = document.getElementById("helpBtn");
 const cameraHelpModal = document.getElementById("cameraHelpModal");
@@ -26,7 +27,6 @@ const faceStepTitle = document.getElementById("faceStepTitle");
 const faceStepIndicators = Array.from(document.querySelectorAll(".face-step-indicator"));
 const faceTestFinish = document.getElementById("faceTestFinish");
 const archiveButtons = Array.from(document.querySelectorAll(".iceberg-archive-button"));
-const icebergLevels = Array.from(document.querySelectorAll(".iceberg-level"));
 const diaryDates = Array.from(document.querySelectorAll(".diary-date"));
 const diaryEntryPanel = document.getElementById("diaryEntryPanel");
 const diaryEntryDate = document.getElementById("diaryEntryDate");
@@ -40,40 +40,42 @@ const photobotCells = Array.from(document.querySelectorAll(".photobot-cell"));
 const photobotControls = Array.from(document.querySelectorAll(".photobot-control"));
 const photobotPieces = Array.from(document.querySelectorAll(".photobot-piece"));
 
-let musicUnlocked = false;
-
 const cameras = {
     cam1: {
-        gif: "images/вид1.gif",
+        gif: "images/video1.gif",
         anomaly: "images/1sc-Photoroom 2.svg",
         movement: "horizontal",
         room: "Кухня",
         time: "02:14",
-        size: 0.18
+        size: 0.18,
+        music: "music/IMG_8603 (1).mp3"
     },
     cam2: {
-        gif: "images/вид2.gif",
+        gif: "images/video2.gif",
         anomaly: "images/2sc-Photoroom 2.svg",
         movement: "vertical",
         room: "Гостиная",
         time: "01:38",
-        size: 0.17
+        size: 0.17,
+        music: "music/IMG_8604 (1).mp3"
     },
     cam3: {
-        gif: "images/вид3.gif",
+        gif: "images/video3.gif",
         anomaly: "images/3sc-Photoroom 1.svg",
         movement: "diagonal",
         room: "Зал",
         time: "03:07",
-        size: 0.155
+        size: 0.155,
+        music: "music/IMG_8605 (1).mp3"
     },
     cam4: {
-        gif: "images/вид4.gif",
+        gif: "images/video4.gif",
         anomaly: "images/4sc-Photoroom 1.svg",
         movement: "random",
         room: "Подвал",
         time: "00:49",
-        size: 0.16
+        size: 0.16,
+        music: "music/IMG_8607 (1).mp3"
     }
 };
 
@@ -196,6 +198,88 @@ const anomalyMotion = {
 
 let screamerTimeoutId = 0;
 let diaryTimers = [];
+let cameraAudioUnlocked = false;
+let scrollAudioTick = 0;
+let currentCameraTrack = "";
+
+const cameraAmbient = new Audio();
+cameraAmbient.loop = true;
+cameraAmbient.preload = "auto";
+cameraAmbient.volume = 0.34;
+const cameraScreamerAudio = new Audio("music/scream1.mp3");
+const diaryScreamerAudio = new Audio("music/scream2.mp3");
+
+cameraScreamerAudio.preload = "auto";
+cameraScreamerAudio.volume = 0.8;
+diaryScreamerAudio.preload = "auto";
+diaryScreamerAudio.volume = 0.8;
+
+const isScreenFocused = (screen) => {
+    if (!screen) {
+        return false;
+    }
+
+    const rect = screen.getBoundingClientRect();
+    const viewportMiddle = window.innerHeight * 0.5;
+
+    return rect.top <= viewportMiddle && rect.bottom >= viewportMiddle;
+};
+
+const stopCameraAudio = () => {
+    cameraAmbient.pause();
+};
+
+const stopCameraScreamerAudio = () => {
+    cameraScreamerAudio.pause();
+    cameraScreamerAudio.currentTime = 0;
+};
+
+const stopDiaryScreamerAudio = () => {
+    diaryScreamerAudio.pause();
+    diaryScreamerAudio.currentTime = 0;
+};
+
+const syncCameraAudio = () => {
+    if (!cameraAudioUnlocked || !cameraScreen || cameraState.isScreamerActive || !isScreenFocused(cameraScreen)) {
+        stopCameraAudio();
+        return;
+    }
+
+    const activeTrack = cameras[cameraState.activeCamera]?.music;
+
+    if (!activeTrack) {
+        stopCameraAudio();
+        return;
+    }
+
+    if (currentCameraTrack !== activeTrack) {
+        cameraAmbient.src = activeTrack;
+        cameraAmbient.currentTime = 0;
+        currentCameraTrack = activeTrack;
+    }
+
+    cameraAmbient.play().catch(() => { });
+};
+
+const unlockCameraAudio = () => {
+    if (cameraAudioUnlocked) {
+        syncCameraAudio();
+        return;
+    }
+
+    cameraAudioUnlocked = true;
+    syncCameraAudio();
+};
+
+const scheduleCameraAudioSync = () => {
+    if (scrollAudioTick) {
+        cancelAnimationFrame(scrollAudioTick);
+    }
+
+    scrollAudioTick = requestAnimationFrame(() => {
+        syncCameraAudio();
+    });
+};
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -360,35 +444,21 @@ const goToSecondScreen = () => {
     cameraScreen.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-const tryStartMusic = () => {
-    if (!bgMusic || musicUnlocked) {
+const openHeroStartModal = () => {
+    if (!heroStartModal) {
+        goToSecondScreen();
         return;
     }
 
-    bgMusic.volume = 0.35;
-
-    const playAttempt = bgMusic.play();
-
-    if (playAttempt && typeof playAttempt.then === "function") {
-        playAttempt
-            .then(() => {
-                musicUnlocked = true;
-            })
-            .catch(() => {
-                musicUnlocked = false;
-            });
-        return;
-    }
-
-    musicUnlocked = true;
+    openModal(heroStartModal);
 };
 
-const unlockMusicOnInteraction = () => {
-    if (musicUnlocked) {
-        return;
+const closeHeroStartModalAndContinue = () => {
+    if (heroStartModal) {
+        closeModal(heroStartModal);
     }
 
-    tryStartMusic();
+    goToSecondScreen();
 };
 
 const setMapState = () => {
@@ -600,14 +670,18 @@ const updateCamera = () => {
     cameraTimeValue.textContent = activeConfig.time;
     setMapState();
     scheduleAnomaly();
+    syncCameraAudio();
 };
 
 const activateScreamer = () => {
     cameraState.isScreamerActive = true;
     stopAnomalyMotion();
+    stopCameraAudio();
+    stopCameraScreamerAudio();
     screamer.classList.add("active");
     screamer.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    cameraScreamerAudio.play().catch(() => { });
 
     if (screamerTimeoutId) {
         clearTimeout(screamerTimeoutId);
@@ -618,6 +692,8 @@ const activateScreamer = () => {
         screamer.classList.remove("active");
         screamer.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
+        stopCameraScreamerAudio();
+        syncCameraAudio();
     }, 1500);
 };
 
@@ -723,13 +799,16 @@ const hideDiaryError = () => {
 
 const showDiaryScreamer = () => {
     diaryState.isScreamerActive = true;
+    stopDiaryScreamerAudio();
     diaryScreamer.classList.add("active");
     diaryScreamer.setAttribute("aria-hidden", "false");
+    diaryScreamerAudio.play().catch(() => { });
 
     diaryTimers.push(window.setTimeout(() => {
         diaryState.isScreamerActive = false;
         diaryScreamer.classList.remove("active");
         diaryScreamer.setAttribute("aria-hidden", "true");
+        stopDiaryScreamerAudio();
         showDiaryError();
     }, 1100));
 };
@@ -775,6 +854,7 @@ const renderDiaryEntry = (date) => {
         diaryState.isSystemErrorVisible = false;
         diaryScreamer.classList.remove("active");
         diaryScreamer.setAttribute("aria-hidden", "true");
+        stopDiaryScreamerAudio();
         hideDiaryError();
     }
 
@@ -794,17 +874,25 @@ const renderDiaryEntry = (date) => {
 };
 
 if (startBtn && cameraScreen) {
-    startBtn.addEventListener("click", goToSecondScreen);
+    startBtn.addEventListener("click", openHeroStartModal);
     startBtn.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            goToSecondScreen();
+            openHeroStartModal();
+        }
+    });
+}
+
+if (heroStartModal && heroStartBackdrop) {
+    heroStartBackdrop.addEventListener("click", (event) => {
+        if (event.target === heroStartBackdrop) {
+            closeHeroStartModalAndContinue();
         }
     });
 }
 
 ["pointerdown", "touchstart", "keydown"].forEach((eventName) => {
-    window.addEventListener(eventName, unlockMusicOnInteraction, { passive: true });
+    window.addEventListener(eventName, unlockCameraAudio, { passive: true });
 });
 
 if (cameraHelpBtn && cameraHelpModal && cameraHelpBackdrop) {
@@ -899,6 +987,7 @@ window.addEventListener("keydown", (event) => {
 
     closeModal(cameraHelpModal);
     closeModal(faceHelpModal);
+    closeModal(heroStartModal);
 });
 
 window.addEventListener("resize", () => {
@@ -909,10 +998,14 @@ window.addEventListener("resize", () => {
         cameraAnomaly.style.width = `${metrics.anomalyWidth}px`;
         applyAnomalyPosition();
     }
+
+    scheduleCameraAudioSync();
 });
+
+window.addEventListener("scroll", scheduleCameraAudioSync, { passive: true });
 
 updateSignal();
 updateCamera();
 renderFaceStep();
 renderPhotobot();
-tryStartMusic();
+scheduleCameraAudioSync();

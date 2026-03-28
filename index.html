@@ -9,14 +9,11 @@
 </head>
 
 <body>
-    <audio id="bgMusic" preload="auto" loop>
-        <source src="music/Платина - Бассок (feat. Voskresenskii).mp3" type="audio/mpeg">
-    </audio>
-
     <main class="poster">
         <section class="hero-screen" aria-label="Первый экран Lucid Nocturne">
             <div class="hero-frame">
                 <div class="hero-background" aria-hidden="true"></div>
+                <div class="screen-fx screen-fx-hero" aria-hidden="true"></div>
 
                 <img class="meat meat-top-left" src="images/1 мясо.svg" alt="" aria-hidden="true">
                 <img class="meat meat-left" src="images/1 мясо.svg" alt="" aria-hidden="true">
@@ -31,7 +28,16 @@
             </div>
         </section>
 
+        <div class="help-modal" id="heroStartModal" aria-hidden="true">
+            <div class="help-modal-backdrop" id="heroStartBackdrop">
+                <div class="help-modal-card" role="dialog" aria-modal="true" aria-label="Предупреждение перед началом">
+                    <img class="help-modal-image" src="images/discl.svg" alt="Предупреждение перед началом наблюдения">
+                </div>
+            </div>
+        </div>
+
         <section class="camera-screen" id="cameraScreen" aria-label="Экран камер наблюдения">
+            <div class="screen-fx screen-fx-camera" aria-hidden="true"></div>
             <div class="camera-screen-header">
                 <div class="camera-screen-title">
                     <span class="camera-screen-title-label">КАМЕРЫ НАБЛЮДЕНИЯ</span>
@@ -44,7 +50,7 @@
             <div class="camera-stage-shell">
                 <img class="camera-side-meat" src="images/4 мясо.svg" alt="" aria-hidden="true">
                 <div class="camera-stage" id="cameraStage">
-                    <img class="camera-feed-image" id="cameraFeedImage" src="images/вид1.gif" alt="Камера наблюдения">
+                    <img class="camera-feed-image" id="cameraFeedImage" src="images/video1.gif" alt="Камера наблюдения">
                     <div class="camera-vhs-noise"></div>
                     <div class="camera-vhs-scanlines"></div>
                     <div class="camera-vhs-tracking"></div>
@@ -134,6 +140,7 @@
 
         <section class="iceberg-screen" id="icebergScreen" aria-label="Айсберг архивов">
             <div class="iceberg-shell">
+                <div class="screen-fx screen-fx-iceberg" aria-hidden="true"></div>
                 <img class="iceberg-background-image" src="images/iceberg2.png" alt="" aria-hidden="true">
                 <div class="iceberg-divider iceberg-divider-top" aria-hidden="true"></div>
                 <div class="iceberg-divider iceberg-divider-1" aria-hidden="true"></div>

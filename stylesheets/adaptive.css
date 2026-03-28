@@ -4,46 +4,55 @@
     }
 
     .hero-screen {
-        margin-top: 0;
+        margin-top: -13.5vw;
+        margin-bottom: -3vw;
     }
 
     .hero-frame {
-        min-height: 68vw;
+        min-height: 54vw;
+        aspect-ratio: 767 / 500;
     }
 
     .hero-content {
-        padding: 8% 5% 10%;
-        gap: 3.4vw;
+        padding: 7.5% 5% 10%;
+        gap: 2.8vw;
     }
 
     .hero-title {
-        min-height: 20vw;
-        font-size: 10.8vw;
-        line-height: 0.95;
+        min-height: 15vw;
+        font-size: 13vw;
+        line-height: 4;
     }
 
     .hero-button {
-        min-width: 56vw;
-        height: 6.4vw;
-        padding: 0 2.6vw;
-        font-size: 7vw;
+        min-width: 52vw;
+        height: 5.8vw;
+        padding: 0 2.2vw;
+        font-size: 9vw;
+        margin-top: -17vw;
+    }
+
+    .hero-background {
+        inset: 10.5vw 0 0 0;
+        background-size: 100% 100%;
+        background-position: center top;
     }
 
     .meat-top-left {
-        width: 25vw;
-        left: -8vw;
-        top: -4vw;
+        width: 50vw;
+        left: -28vw;
+        top: -19vw;
     }
 
     .meat-left {
-        width: 30vw;
-        left: -19vw;
-        top: 61%;
+        width: 47vw;
+        left: -25vw;
+        top: 85%;
     }
 
     .meat-right {
-        width: 30vw;
-        right: -18vw;
+        width: 45vw;
+        right: -25vw;
         top: calc(54% + 9vw);
     }
 
@@ -56,8 +65,10 @@
         padding-right: 3vw;
     }
 
+
+
     .camera-screen {
-        padding-top: 4vw;
+        padding-top: 1.5vw;
         padding-bottom: 7vw;
     }
 
@@ -66,7 +77,8 @@
     .diary-header,
     .photobot-header {
         gap: 1.6vw;
-        margin-bottom: 3.6vw;
+        margin-top: 2.4vw;
+        margin-bottom: 3vw;
     }
 
     .camera-screen-title,
@@ -84,14 +96,14 @@
 
     .camera-screen-title-label,
     .camera-help-button-label {
-        transform: none;
+        transform: translateX(0.1);
     }
 
     .camera-help-button,
     .face-test-help-button {
         width: 8.6vw;
         height: 8.6vw;
-        font-size: 7vw;
+        font-size: 9vw;
     }
 
     .camera-stage-shell {
@@ -109,7 +121,7 @@
     .camera-ui {
         top: 3vw;
         left: 3vw;
-        font-size: 3.6vw;
+        font-size: 4.8vw;
         line-height: 0.95;
     }
 
@@ -119,9 +131,9 @@
     }
 
     .camera-room-label {
-        top: 12vw;
-        left: 51%;
-        font-size: 5vw;
+        top: 46vw;
+        left: 56%;
+        font-size: 7vw;
     }
 
     .camera-anomaly {
@@ -134,8 +146,8 @@
         width: 54vw;
         min-height: 16vw;
         padding: 0.6vw 1.8vw 0.8vw;
-        font-size: 5.6vw;
-        line-height: 0.72;
+        font-size: 8.8vw;
+        line-height: 0.62;
     }
 
     .camera-map {
@@ -152,7 +164,7 @@
     }
 
     .camera-map-button[data-camera="cam1"] {
-        top: 1%;
+        top: -1vw;
         left: 24%;
     }
 
@@ -197,15 +209,15 @@
     }
 
     .face-test-meat-title {
-        width: 14vw;
-        left: -4vw;
-        top: 0.8vw;
+        width: 20vw;
+        left: -8vw;
+        top: 3vw;
     }
 
     .face-test-meat-right {
-        width: 34vw;
-        right: -14vw;
-        top: 7vw;
+        width: 45vw;
+        right: -29vw;
+        top: 48vw;
     }
 
     .face-test-stage {
@@ -271,57 +283,70 @@
     }
 
     .iceberg-level {
-        grid-template-columns: minmax(0, 1fr) 26vw;
+        grid-template-columns: minmax(0, 1fr) 29vw;
     }
 
     .iceberg-level-main {
-        padding: 0 2vw;
+        padding: 0 1.6vw;
     }
 
     .iceberg-level-text {
-        max-width: 52vw;
-        font-size: 2.3vw;
-        line-height: 0.95;
+        max-width: 60vw;
+        font-size: 2.95vw;
+        line-height: 1.02;
+        text-shadow:
+            -0.14vw 0 #000,
+            0.14vw 0 #000,
+            0 -0.14vw #000,
+            0 0.14vw #000,
+            0 0 0.22vw rgba(255, 255, 255, 0.35);
     }
 
     .iceberg-level-side {
-        width: 26vw;
+        width: 29vw;
     }
 
     .iceberg-archive-button,
     .iceberg-level-image {
-        width: 26vw;
-        font-size: 6vw;
+        width: 29vw;
+        font-size: 12vw;
+        object-fit: cover;
+        object-position: center;
     }
 
     .diary-screen {
         min-height: 73vw;
         padding-top: 4vw;
-        padding-bottom: 6vw;
+        padding-bottom: 0;
+    }
+
+    .diary-overlay,
+    .screen-fx-diary {
+        inset: 0 0 -15vw 0;
     }
 
     .diary-meat-top-left {
-        width: 15vw;
+        width: 25vw;
         left: -2vw;
-        top: -1vw;
+        top: -5vw;
     }
 
     .diary-meat-title {
-        width: 12vw;
-        left: 66vw;
-        top: 1.5vw;
+        width: 20vw;
+        left: 70vw;
+        top: 5vw;
     }
 
     .diary-meat-top-right {
-        width: 28vw;
-        top: -10vw;
-        right: -10vw;
+        width: 38vw;
+        top: -9vw;
+        right: -16vw;
     }
 
     .diary-meat-right {
-        width: 32vw;
-        right: -11vw;
-        top: 19vw;
+        width: 40vw;
+        right: -26vw;
+        top: 12vw;
     }
 
     .diary-layout {
@@ -355,27 +380,28 @@
     .diary-entry-panel {
         width: 78vw;
         height: 42vw;
-        padding: 1.6vw 1.8vw 1.6vw 2vw;
+        padding: 2.2vw;
         margin: 0 auto;
+        justify-content: center;
     }
 
     .diary-entry-date {
-        min-height: 3vw;
+        min-height: 0;
         width: 100%;
-        font-size: 4.6vw;
-        line-height: 0.78;
+        font-size: 6.9vw;
+        line-height: 0.68;
     }
 
     .diary-entry-text {
         width: 100%;
-        margin-top: 1.4vw;
-        font-size: 4.2vw;
-        line-height: 0.75;
+        margin-top: 1.8vw;
+        font-size: 6vw;
+        line-height: 0.64;
     }
 
     .diary-mask {
-        min-width: 7vw;
-        height: 2.1vw;
+        min-width: 8.2vw;
+        height: 2.7vw;
     }
 
     .photobot-screen {
@@ -384,20 +410,20 @@
     }
 
     .photobot-meat-left {
-        width: 28vw;
-        left: -13vw;
+        width: 50vw;
+        left: -31vw;
         top: 20vw;
     }
 
     .photobot-meat-top-left {
-        width: 13vw;
-        left: -4vw;
-        top: -3vw;
+        width: 25vw;
+        left: -10vw;
+        top: -9vw;
     }
 
     .photobot-meat-right {
-        width: 30vw;
-        right: -12vw;
+        width: 44vw;
+        right: -19vw;
         top: 23vw;
     }
 
@@ -408,7 +434,7 @@
     }
 
     .photobot-header {
-        margin-top: 1vw;
+        margin-top: 2.4vw;
         margin-bottom: 3vw;
     }
 
@@ -467,6 +493,9 @@
     }
 
     .photobot-footer {
+        width: calc(100% + 6vw);
+        margin-left: -3vw;
+        margin-right: -3vw;
         margin-top: 4vw;
         min-height: 9vw;
         padding: 0.5vw 1.4vw;
@@ -487,16 +516,25 @@
 @media (max-width: 430px) {
     .hero-frame {
         min-height: 72vw;
+        aspect-ratio: 1920 / 1020;
+    }
+
+    .hero-background {
+        inset: -2.6vw 0 0 0;
+        background-size: 100% 100%;
+        background-position: center top;
     }
 
     .hero-title {
-        font-size: 10vw;
+        min-height: 14vw;
+        font-size: 6.5vw;
     }
 
     .hero-button {
-        min-width: 60vw;
-        height: 7vw;
-        font-size: 6.8vw;
+        min-width: 54vw;
+        height: 6vw;
+        font-size: 5.8vw;
+        margin-top: -4vw;
     }
 
     .camera-stage {
@@ -504,12 +542,47 @@
     }
 
     .camera-ui {
-        font-size: 3.8vw;
+        font-size: 5vw;
     }
 
     .signal-panel {
         width: 56vw;
-        font-size: 5.4vw;
+        font-size: 8.4vw;
+        line-height: 0.62;
+    }
+
+    .camera-room-label {
+        top: 48vw;
+        left: 56%;
+        font-size: 7.2vw;
+    }
+
+    .camera-map-button[data-camera="cam1"] {
+        top: -1vw;
+    }
+
+    .diary-overlay,
+    .screen-fx-diary {
+        inset: 0 0 -17vw 0;
+    }
+
+    .diary-entry-panel {
+        padding: 2.4vw;
+    }
+
+    .diary-entry-date {
+        font-size: 7.3vw;
+    }
+
+    .diary-entry-text {
+        margin-top: 1.9vw;
+        font-size: 6.4vw;
+        line-height: 0.62;
+    }
+
+    .diary-mask {
+        min-width: 8.6vw;
+        height: 2.9vw;
     }
 
     .camera-map {
@@ -531,9 +604,28 @@
         background-size: 113% 100%;
     }
 
+    .iceberg-level {
+        grid-template-columns: minmax(0, 1fr) 31vw;
+    }
+
+    .iceberg-level-main {
+        padding: 0 1.4vw;
+    }
+
     .iceberg-level-text {
-        max-width: 50vw;
-        font-size: 2.15vw;
+        max-width: 60vw;
+        font-size: 3.1vw;
+        line-height: 1.04;
+    }
+
+    .iceberg-level-side {
+        width: 31vw;
+    }
+
+    .iceberg-archive-button,
+    .iceberg-level-image {
+        width: 31vw;
+        font-size: 12.4vw;
     }
 
     .diary-date {

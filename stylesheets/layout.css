@@ -557,26 +557,41 @@ img {
     pointer-events: none;
     background:
         repeating-linear-gradient(0deg,
-            rgba(255, 255, 255, 0.06) 0,
-            rgba(255, 255, 255, 0.06) 0.06vw,
-            transparent 0.06vw,
-            transparent 0.24vw),
-        linear-gradient(90deg,
-            rgba(255, 0, 0, 0.1) 0,
-            transparent 18%,
-            rgba(0, 132, 255, 0.08) 52%,
-            transparent 76%,
-            rgba(255, 0, 0, 0.09) 100%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.05)),
+            rgba(255, 255, 255, 0.1) 0,
+            rgba(255, 255, 255, 0.1) 0.05vw,
+            transparent 0.05vw,
+            transparent 0.18vw),
         repeating-linear-gradient(90deg,
-            rgba(255, 255, 255, 0.04) 0,
-            rgba(255, 255, 255, 0.04) 1.2vw,
-            transparent 1.2vw,
-            transparent 3.8vw),
-        radial-gradient(circle at 18% 24%, rgba(255, 0, 0, 0.12), transparent 18%),
-        radial-gradient(circle at 78% 58%, rgba(255, 255, 255, 0.08), transparent 14%);
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 0.28vw,
+            transparent 0.28vw,
+            transparent 1.1vw),
+        linear-gradient(90deg,
+            rgba(255, 0, 0, 0.16) 0,
+            transparent 14%,
+            rgba(0, 132, 255, 0.14) 46%,
+            transparent 70%,
+            rgba(255, 0, 0, 0.15) 100%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.08)),
+        repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 0,
+            rgba(255, 255, 255, 0.05) 0.9vw,
+            transparent 0.9vw,
+            transparent 2.8vw),
+        radial-gradient(circle at 18% 24%, rgba(255, 0, 0, 0.18), transparent 18%),
+        radial-gradient(circle at 78% 58%, rgba(255, 255, 255, 0.12), transparent 14%),
+        radial-gradient(circle at 52% 46%, rgba(255, 255, 255, 0.08), transparent 22%);
     mix-blend-mode: screen;
-    opacity: 0.42;
+    opacity: 0.48;
+}
+
+.screen-fx-hero,
+.screen-fx-camera,
+.screen-fx-iceberg,
+.screen-fx-face-test,
+.screen-fx-diary,
+.screen-fx-photobot {
+    opacity: 0.48;
 }
 
 .face-test-header {
