@@ -705,8 +705,7 @@ img {
     height: 45vw;
     margin: -1.4vw auto 0;
     padding: 0;
-    background:
-        #050505 url("../images/iceberg-no-lines.svg") left top / 100% 100% no-repeat;
+    background: #050505;
 }
 
 .iceberg-shell {
@@ -716,12 +715,23 @@ img {
     height: 100%;
 }
 
+.iceberg-background-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .iceberg-divider {
     position: absolute;
     left: 0;
     right: 0;
     height: 0.26vw;
     background: var(--frame-red);
+    z-index: 1;
 }
 
 .iceberg-divider-top {
@@ -751,6 +761,7 @@ img {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 24.051vw;
     align-items: center;
+    z-index: 2;
 }
 
 .iceberg-level[data-level="1"] {
