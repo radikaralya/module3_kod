@@ -706,7 +706,7 @@ img {
     margin: -1.4vw auto 0;
     padding: 0;
     background:
-        #050505 url("../images/айсберг без полос.svg") left top / 100% 100% no-repeat;
+        #050505 url("../images/iceberg-no-lines.svg") left top / 100% 100% no-repeat;
 }
 
 .iceberg-shell {
