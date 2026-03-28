@@ -1,0 +1,561 @@
+@media (max-width: 767px) {
+    .poster {
+        background-size: cover;
+    }
+
+    .hero-screen {
+        margin-top: 0;
+    }
+
+    .hero-frame {
+        min-height: 68vw;
+    }
+
+    .hero-content {
+        padding: 8% 5% 10%;
+        gap: 3.4vw;
+    }
+
+    .hero-title {
+        min-height: 20vw;
+        font-size: 10.8vw;
+        line-height: 0.95;
+    }
+
+    .hero-button {
+        min-width: 56vw;
+        height: 6.4vw;
+        padding: 0 2.6vw;
+        font-size: 7vw;
+    }
+
+    .meat-top-left {
+        width: 25vw;
+        left: -8vw;
+        top: -4vw;
+    }
+
+    .meat-left {
+        width: 30vw;
+        left: -19vw;
+        top: 61%;
+    }
+
+    .meat-right {
+        width: 30vw;
+        right: -18vw;
+        top: calc(54% + 9vw);
+    }
+
+    .camera-screen,
+    .face-test-screen,
+    .iceberg-screen,
+    .diary-screen,
+    .photobot-screen {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .camera-screen {
+        padding-top: 4vw;
+        padding-bottom: 7vw;
+    }
+
+    .camera-screen-header,
+    .face-test-header,
+    .diary-header,
+    .photobot-header {
+        gap: 1.6vw;
+        margin-bottom: 3.6vw;
+    }
+
+    .camera-screen-title,
+    .face-test-title,
+    .diary-title,
+    .photobot-title {
+        min-height: 8.6vw;
+        height: auto;
+        padding: 0.8vw 3vw 1.2vw;
+        font-size: 8.1vw;
+        line-height: 0.84;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .camera-screen-title-label,
+    .camera-help-button-label {
+        transform: none;
+    }
+
+    .camera-help-button,
+    .face-test-help-button {
+        width: 8.6vw;
+        height: 8.6vw;
+        font-size: 7vw;
+    }
+
+    .camera-stage-shell {
+        width: 100%;
+    }
+
+    .camera-side-meat {
+        display: none;
+    }
+
+    .camera-stage {
+        min-height: 83vw;
+    }
+
+    .camera-ui {
+        top: 3vw;
+        left: 3vw;
+        font-size: 3.6vw;
+        line-height: 0.95;
+    }
+
+    .camera-rec-dot {
+        width: 2.3vw;
+        height: 2.3vw;
+    }
+
+    .camera-room-label {
+        top: 12vw;
+        left: 51%;
+        font-size: 5vw;
+    }
+
+    .camera-anomaly {
+        width: 20vw;
+    }
+
+    .signal-panel {
+        left: 2vw;
+        bottom: 3vw;
+        width: 54vw;
+        min-height: 16vw;
+        padding: 0.6vw 1.8vw 0.8vw;
+        font-size: 5.6vw;
+        line-height: 0.72;
+    }
+
+    .camera-map {
+        width: 35vw;
+        right: 2vw;
+        bottom: 4vw;
+    }
+
+    .camera-map-button {
+        min-width: 6vw;
+        min-height: 3.6vw;
+        font-size: 2.9vw;
+        padding: 0.4vw 0.6vw;
+    }
+
+    .camera-map-button[data-camera="cam1"] {
+        top: 1%;
+        left: 24%;
+    }
+
+    .camera-map-button[data-camera="cam2"] {
+        top: 17%;
+        right: 2%;
+    }
+
+    .camera-map-button[data-camera="cam3"] {
+        bottom: 29%;
+        left: 13%;
+    }
+
+    .camera-map-button[data-camera="cam4"] {
+        bottom: 29%;
+        right: 11%;
+    }
+
+    .ticker-section {
+        margin-top: -1vw;
+        padding-top: 1vw;
+    }
+
+    .ticker-strip {
+        height: 6.8vw;
+    }
+
+    .ticker-text {
+        font-size: 6.3vw;
+        line-height: 0.85;
+        transform: translateY(-0.25vw);
+    }
+
+    .face-test-screen {
+        padding-top: 4vw;
+        padding-bottom: 8vw;
+    }
+
+    .face-test-meat-left-clip,
+    .face-test-meat-right-small {
+        display: none;
+    }
+
+    .face-test-meat-title {
+        width: 14vw;
+        left: -4vw;
+        top: 0.8vw;
+    }
+
+    .face-test-meat-right {
+        width: 34vw;
+        right: -14vw;
+        top: 7vw;
+    }
+
+    .face-test-stage {
+        width: 100%;
+        gap: 2vw;
+        padding-top: 1.2vw;
+    }
+
+    .face-test-header {
+        margin-bottom: 2.4vw;
+    }
+
+    .face-test-title {
+        min-height: 7.2vw;
+        padding: 0.6vw 2.4vw 0.9vw;
+        font-size: 6.9vw;
+        line-height: 0.84;
+    }
+
+    .face-test-help-button {
+        width: 7.2vw;
+        height: 7.2vw;
+        font-size: 6vw;
+    }
+
+    .face-test-panel {
+        width: 76vw;
+        height: 45vw;
+        padding: 1.6vw;
+        gap: 1.6vw;
+    }
+
+    .face-option {
+        width: 34.5vw;
+        height: 40vw;
+    }
+
+    .face-step-panel {
+        width: 17vw;
+        min-height: 11vw;
+        padding: 0.6vw 0.9vw 0.8vw;
+        margin-top: 1.6vw;
+    }
+
+    .face-step-title {
+        font-size: 4.6vw;
+    }
+
+    .face-step-indicator {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+
+    .iceberg-screen {
+        height: 62vw;
+        margin-top: 0;
+        background-size: 109% 100%;
+        background-position: center top;
+    }
+
+    .iceberg-divider {
+        height: 0.35vw;
+    }
+
+    .iceberg-level {
+        grid-template-columns: minmax(0, 1fr) 26vw;
+    }
+
+    .iceberg-level-main {
+        padding: 0 2vw;
+    }
+
+    .iceberg-level-text {
+        max-width: 52vw;
+        font-size: 2.3vw;
+        line-height: 0.95;
+    }
+
+    .iceberg-level-side {
+        width: 26vw;
+    }
+
+    .iceberg-archive-button,
+    .iceberg-level-image {
+        width: 26vw;
+        font-size: 6vw;
+    }
+
+    .diary-screen {
+        min-height: 73vw;
+        padding-top: 4vw;
+        padding-bottom: 6vw;
+    }
+
+    .diary-meat-top-left {
+        width: 15vw;
+        left: -2vw;
+        top: -1vw;
+    }
+
+    .diary-meat-title {
+        width: 12vw;
+        left: 66vw;
+        top: 1.5vw;
+    }
+
+    .diary-meat-top-right {
+        width: 28vw;
+        top: -10vw;
+        right: -10vw;
+    }
+
+    .diary-meat-right {
+        width: 32vw;
+        right: -11vw;
+        top: 19vw;
+    }
+
+    .diary-layout {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3vw;
+        padding-top: 1vw;
+    }
+
+    .diary-dates {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(5, auto);
+        align-items: start;
+        column-gap: 5vw;
+        row-gap: 0.4vw;
+        width: auto;
+    }
+
+    .diary-date {
+        font-size: 4.6vw;
+        line-height: 0.58;
+    }
+
+    .diary-entry-panel {
+        width: 78vw;
+        height: 42vw;
+        padding: 1.6vw 1.8vw 1.6vw 2vw;
+        margin: 0 auto;
+    }
+
+    .diary-entry-date {
+        min-height: 3vw;
+        width: 100%;
+        font-size: 4.6vw;
+        line-height: 0.78;
+    }
+
+    .diary-entry-text {
+        width: 100%;
+        margin-top: 1.4vw;
+        font-size: 4.2vw;
+        line-height: 0.75;
+    }
+
+    .diary-mask {
+        min-width: 7vw;
+        height: 2.1vw;
+    }
+
+    .photobot-screen {
+        padding-top: 4vw;
+        padding-bottom: 0;
+    }
+
+    .photobot-meat-left {
+        width: 28vw;
+        left: -13vw;
+        top: 20vw;
+    }
+
+    .photobot-meat-top-left {
+        width: 13vw;
+        left: -4vw;
+        top: -3vw;
+    }
+
+    .photobot-meat-right {
+        width: 30vw;
+        right: -12vw;
+        top: 23vw;
+    }
+
+    .photobot-meat-title {
+        width: 13vw;
+        left: 6vw;
+        top: 0;
+    }
+
+    .photobot-header {
+        margin-top: 1vw;
+        margin-bottom: 3vw;
+    }
+
+    .photobot-frame {
+        width: 74vw;
+        height: 56vw;
+        margin-top: 2vw;
+        padding: 1.4vw;
+        grid-template-columns: 1fr 16vw;
+    }
+
+    .photobot-cell,
+    .photobot-control {
+        border-width: 0.22vw;
+    }
+
+    .photobot-control-label {
+        width: 6.4vw;
+        height: 6.4vw;
+    }
+
+    .photobot-control-label-up::before,
+    .photobot-control-label-down::before {
+        width: 0.7vw;
+        height: 3.6vw;
+    }
+
+    .photobot-control-label-right::before,
+    .photobot-control-label-left::before {
+        width: 3.6vw;
+        height: 0.7vw;
+    }
+
+    .photobot-control-label-up::after {
+        border-left-width: 1.2vw;
+        border-right-width: 1.2vw;
+        border-bottom-width: 1.5vw;
+    }
+
+    .photobot-control-label-down::after {
+        border-left-width: 1.2vw;
+        border-right-width: 1.2vw;
+        border-top-width: 1.5vw;
+    }
+
+    .photobot-control-label-right::after {
+        border-top-width: 1.2vw;
+        border-bottom-width: 1.2vw;
+        border-left-width: 1.5vw;
+    }
+
+    .photobot-control-label-left::after {
+        border-top-width: 1.2vw;
+        border-bottom-width: 1.2vw;
+        border-right-width: 1.5vw;
+    }
+
+    .photobot-footer {
+        margin-top: 4vw;
+        min-height: 9vw;
+        padding: 0.5vw 1.4vw;
+        font-size: 3.9vw;
+        line-height: 0.62;
+    }
+
+    .photobot-footer-meta {
+        gap: 0;
+        transform: translateY(-0.2vw);
+    }
+
+    .photobot-footer-code {
+        transform: translateY(0.8vw);
+    }
+}
+
+@media (max-width: 430px) {
+    .hero-frame {
+        min-height: 72vw;
+    }
+
+    .hero-title {
+        font-size: 10vw;
+    }
+
+    .hero-button {
+        min-width: 60vw;
+        height: 7vw;
+        font-size: 6.8vw;
+    }
+
+    .camera-stage {
+        min-height: 88vw;
+    }
+
+    .camera-ui {
+        font-size: 3.8vw;
+    }
+
+    .signal-panel {
+        width: 56vw;
+        font-size: 5.4vw;
+    }
+
+    .camera-map {
+        width: 37vw;
+    }
+
+    .face-test-panel {
+        width: 80vw;
+        height: 48vw;
+    }
+
+    .face-option {
+        width: 36vw;
+        height: 42vw;
+    }
+
+    .iceberg-screen {
+        height: 66vw;
+        background-size: 113% 100%;
+    }
+
+    .iceberg-level-text {
+        max-width: 50vw;
+        font-size: 2.15vw;
+    }
+
+    .diary-date {
+        font-size: 4.8vw;
+    }
+
+    .diary-entry-panel {
+        width: 80vw;
+        height: 45vw;
+    }
+
+    .diary-entry-text {
+        font-size: 4vw;
+    }
+
+    .photobot-frame {
+        width: 78vw;
+        height: 60vw;
+        grid-template-columns: 1fr 17vw;
+    }
+
+    .photobot-footer {
+        font-size: 3.6vw;
+    }
+}

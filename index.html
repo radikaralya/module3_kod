@@ -4,12 +4,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lucid Nocturne</title>
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
+    <audio id="bgMusic" preload="auto" loop>
+        <source src="music/Платина - Бассок (feat. Voskresenskii).mp3" type="audio/mpeg">
+    </audio>
 
+    <main class="poster">
+        <section class="hero-screen" aria-label="Первый экран Lucid Nocturne">
+            <div class="hero-frame">
+                <div class="hero-background" aria-hidden="true"></div>
+
+                <img class="meat meat-top-left" src="images/1 мясо.svg" alt="" aria-hidden="true">
+                <img class="meat meat-left" src="images/1 мясо.svg" alt="" aria-hidden="true">
+                <img class="meat meat-right" src="images/1 мясо.svg" alt="" aria-hidden="true">
+
+                <div class="hero-content">
+                    <h1 class="hero-title">LUCID NOCTURNE</h1>
+                    <div class="hero-button" id="startBtn" role="button" tabindex="0">
+                        <span class="hero-button-label">НАЧАТЬ НАБЛЮДЕНИЕ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="camera-screen" id="cameraScreen" aria-label="Экран камер наблюдения">
+            <div class="camera-screen-header">
+                <div class="camera-screen-title">
+                    <span class="camera-screen-title-label">КАМЕРЫ НАБЛЮДЕНИЯ</span>
+                </div>
+                <button class="camera-help-button" id="helpBtn" type="button" aria-label="Открыть инструкцию">
+                    <span class="camera-help-button-label">?</span>
+                </button>
+            </div>
+
+            <div class="camera-stage-shell">
+                <img class="camera-side-meat" src="images/4 мясо.svg" alt="" aria-hidden="true">
+                <div class="camera-stage" id="cameraStage">
+                    <img class="camera-feed-image" id="cameraFeedImage" src="images/вид1.gif" alt="Камера наблюдения">
+                    <div class="camera-vhs-noise"></div>
+                    <div class="camera-vhs-scanlines"></div>
+                    <div class="camera-vhs-tracking"></div>
+
+                    <div class="camera-ui camera-ui-left">
+                        <div class="camera-rec-line">
+                            <span class="camera-rec-text">REC</span>
+                            <span class="camera-rec-dot"></span>
+                        </div>
+                        <div class="camera-status">КАМЕРА АКТИВНА</div>
+                        <div class="camera-time">ВРЕМЯ: <span id="cameraTimeValue">02:14</span></div>
+                    </div>
+
+                    <div class="camera-room-label" id="cameraRoomLabel">Кухня</div>
+
+                    <img class="camera-anomaly" id="cameraAnomaly" src="images/1sc-Photoroom 2.svg" alt="Аномалия">
+
+                    <div class="signal-panel">
+                        <div>Аномалия подтверждена</div>
+                        <div>Уровень сигнала: <span id="signalValue">0%</span></div>
+                    </div>
+
+                    <div class="camera-map">
+                        <img class="camera-map-image" src="images/камеры 2 экр.svg" alt="Карта камер">
+                        <button class="camera-map-button active" data-camera="cam1" type="button">кам1</button>
+                        <button class="camera-map-button" data-camera="cam2" type="button">кам2</button>
+                        <button class="camera-map-button" data-camera="cam3" type="button">кам3</button>
+                        <button class="camera-map-button" data-camera="cam4" type="button">кам4</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ticker-section" aria-label="Бегущая строка">
+            <div class="ticker-strip">
+                <div class="ticker-track">
+                    <span class="ticker-text">ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ? ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ?</span>
+                    <span class="ticker-text" aria-hidden="true">ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ? ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ?</span>
+                    <span class="ticker-text" aria-hidden="true">ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ? ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ?</span>
+                    <span class="ticker-text" aria-hidden="true">ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ? ТЫ МОЖЕШЬ ДОВЕРЯТЬ СВОИМ ГЛАЗАМ?</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="face-test-screen" id="faceTestScreen" aria-label="Тест на искажение лица">
+            <div class="face-test-glitch" aria-hidden="true"></div>
+            <div class="screen-fx screen-fx-face-test" aria-hidden="true"></div>
+            <img class="face-test-meat face-test-meat-title" src="images/5 мясо.svg" alt="" aria-hidden="true">
+            <div class="face-test-meat-clip face-test-meat-left-clip" aria-hidden="true">
+                <img class="face-test-meat face-test-meat-left" src="images/2 мясо.svg" alt="">
+            </div>
+            <img class="face-test-meat face-test-meat-right" src="images/1 мясо.svg" alt="" aria-hidden="true">
+            <img class="face-test-meat face-test-meat-right-small" src="images/3 мясо.svg" alt="" aria-hidden="true">
+
+            <div class="face-test-header camera-screen-header">
+                <div class="camera-screen-title face-test-title">
+                    <span class="camera-screen-title-label">ТЫ ПО ПРЕЖНЕМУ УЗНАЕШЬ ЧЕЛОВЕКА?</span>
+                </div>
+                <button class="camera-help-button face-test-help-button" id="faceHelpBtn" type="button" aria-label="Открыть инструкцию">
+                    <span class="camera-help-button-label">?</span>
+                </button>
+            </div>
+
+            <div class="face-test-stage">
+                <div class="face-test-panel" id="faceTestPanel">
+                    <button class="face-option" id="faceLeft" type="button" data-side="left" aria-label="Левое лицо">
+                        <img class="face-option-image" id="faceLeftImage" src="images/3экр пацан1.svg" alt="Левое лицо">
+                    </button>
+                    <button class="face-option" id="faceRight" type="button" data-side="right" aria-label="Правое лицо">
+                        <img class="face-option-image" id="faceRightImage" src="images/3экр пацан2.svg" alt="Правое лицо">
+                    </button>
+                    <div class="face-test-finish" id="faceTestFinish" aria-hidden="true">
+                        <div class="face-test-finish-text">ЛИЦО БОЛЬШЕ НЕ РАСПОЗНАЁТСЯ</div>
+                    </div>
+                </div>
+
+                <div class="face-step-panel">
+                    <div class="face-step-title" id="faceStepTitle">ШАГ 01</div>
+                    <div class="face-step-indicators">
+                        <span class="face-step-indicator active"></span>
+                        <span class="face-step-indicator"></span>
+                        <span class="face-step-indicator"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="iceberg-screen" id="icebergScreen" aria-label="Айсберг архивов">
+            <div class="iceberg-shell">
+                <div class="iceberg-divider iceberg-divider-top" aria-hidden="true"></div>
+                <div class="iceberg-divider iceberg-divider-1" aria-hidden="true"></div>
+                <div class="iceberg-divider iceberg-divider-2" aria-hidden="true"></div>
+                <div class="iceberg-divider iceberg-divider-3" aria-hidden="true"></div>
+                <div class="iceberg-divider iceberg-divider-bottom" aria-hidden="true"></div>
+
+                <div class="iceberg-level" data-level="1">
+                    <div class="iceberg-level-main">
+                        <p class="iceberg-level-text" id="icebergText1"></p>
+                    </div>
+                    <div class="iceberg-level-side">
+                        <button class="iceberg-archive-button" data-archive="1" type="button">АРХИВ</button>
+                        <img class="iceberg-level-image" id="icebergImage1" src="images/1ур.svg" alt="Уровень 1">
+                    </div>
+                </div>
+
+                <div class="iceberg-level" data-level="2">
+                    <div class="iceberg-level-main">
+                        <p class="iceberg-level-text" id="icebergText2"></p>
+                    </div>
+                    <div class="iceberg-level-side">
+                        <button class="iceberg-archive-button" data-archive="2" type="button">АРХИВ</button>
+                        <img class="iceberg-level-image" id="icebergImage2" src="images/2ур.svg" alt="Уровень 2">
+                    </div>
+                </div>
+
+                <div class="iceberg-level" data-level="3">
+                    <div class="iceberg-level-main">
+                        <p class="iceberg-level-text" id="icebergText3"></p>
+                    </div>
+                    <div class="iceberg-level-side">
+                        <button class="iceberg-archive-button" data-archive="3" type="button">АРХИВ</button>
+                        <img class="iceberg-level-image" id="icebergImage3" src="images/3ур.svg" alt="Уровень 3">
+                    </div>
+                </div>
+
+                <div class="iceberg-level" data-level="4">
+                    <div class="iceberg-level-main">
+                        <p class="iceberg-level-text" id="icebergText4"></p>
+                    </div>
+                    <div class="iceberg-level-side">
+                        <button class="iceberg-archive-button" data-archive="4" type="button">АРХИВ</button>
+                        <img class="iceberg-level-image" id="icebergImage4" src="images/4ур.svg" alt="Уровень 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diary-screen" id="diaryScreen" aria-label="Дневник оператора">
+            <div class="diary-overlay" aria-hidden="true"></div>
+            <div class="screen-fx screen-fx-diary" aria-hidden="true"></div>
+
+            <img class="diary-meat diary-meat-top-left" src="images/мясо 6.svg" alt="" aria-hidden="true">
+            <img class="diary-meat diary-meat-title" src="images/5 мясо.svg" alt="" aria-hidden="true">
+            <img class="diary-meat diary-meat-top-right" src="images/2 мясо.svg" alt="" aria-hidden="true">
+            <img class="diary-meat diary-meat-right" src="images/1 мясо.svg" alt="" aria-hidden="true">
+
+            <div class="diary-header camera-screen-header">
+                <div class="camera-screen-title diary-title">
+                    <span class="camera-screen-title-label">ДНЕВНИК ОПЕРАТОРА</span>
+                </div>
+            </div>
+
+            <div class="diary-layout" id="diaryLayout">
+                <div class="diary-dates">
+                    <button class="diary-date" data-date="02.04.2007" type="button">02.04.2007</button>
+                    <button class="diary-date" data-date="01.04.2008" type="button">01.04.2008</button>
+                    <button class="diary-date" data-date="27.04.2008" type="button">27.04.2008</button>
+                    <button class="diary-date" data-date="01.07.2008" type="button">01.07.2008</button>
+                    <button class="diary-date" data-date="14.08.2008" type="button">14.08.2008</button>
+                    <button class="diary-date" data-date="06.03.2009" type="button">06.03.2009</button>
+                    <button class="diary-date" data-date="01.05.2009" type="button">01.05.2009</button>
+                    <button class="diary-date" data-date="15.05.2009" type="button">15.05.2009</button>
+                    <button class="diary-date" data-date="01.06.2009" type="button">01.06.2009</button>
+                    <button class="diary-date diary-date-special" data-date="15.06.2009" type="button">15.06.2009</button>
+                </div>
+
+                <div class="diary-entry-panel diary-entry-panel-hidden" id="diaryEntryPanel">
+                    <div class="diary-entry-date" id="diaryEntryDate"></div>
+                    <div class="diary-entry-text" id="diaryEntryText"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="photobot-screen" id="photobotScreen" aria-label="Фоторобот">
+            <div class="photobot-overlay" aria-hidden="true"></div>
+            <div class="screen-fx screen-fx-photobot" aria-hidden="true"></div>
+
+            <img class="photobot-meat photobot-meat-left" src="images/1 мясо.svg" alt="" aria-hidden="true">
+            <img class="photobot-meat photobot-meat-top-left" src="images/3 мясо.svg" alt="" aria-hidden="true">
+            <div class="photobot-meat-wrap photobot-meat-right">
+                <img class="photobot-meat photobot-meat-right-inner" src="images/2 мясо.svg" alt="" aria-hidden="true">
+            </div>
+            <img class="photobot-meat photobot-meat-title" src="images/5 мясо.svg" alt="" aria-hidden="true">
+
+            <div class="photobot-header camera-screen-header">
+                <div class="camera-screen-title photobot-title">
+                    <span class="camera-screen-title-label">СОСТАВЬ СВОЕГО ФОТОРОБОТА</span>
+                </div>
+            </div>
+
+            <div class="photobot-frame" id="photobotFrame">
+                <div class="photobot-face-grid" id="photobotGrid" aria-label="Поле фоторобота">
+                    <button class="photobot-cell" data-index="0" type="button">
+                        <div class="photobot-piece" id="photobotPiece0" aria-hidden="true"></div>
+                    </button>
+                    <button class="photobot-cell" data-index="1" type="button">
+                        <div class="photobot-piece" id="photobotPiece1" aria-hidden="true"></div>
+                    </button>
+                    <button class="photobot-cell" data-index="2" type="button">
+                        <div class="photobot-piece" id="photobotPiece2" aria-hidden="true"></div>
+                    </button>
+                    <button class="photobot-cell" data-index="3" type="button">
+                        <div class="photobot-piece" id="photobotPiece3" aria-hidden="true"></div>
+                    </button>
+                </div>
+
+                <div class="photobot-controls" aria-label="Управление фотороботом">
+                    <button class="photobot-control" data-direction="up" type="button" aria-label="Вверх"><span class="photobot-control-label photobot-control-label-up">↑</span></button>
+                    <button class="photobot-control" data-direction="down" type="button" aria-label="Вниз"><span class="photobot-control-label photobot-control-label-down">↓</span></button>
+                    <button class="photobot-control" data-direction="right" type="button" aria-label="Вправо"><span class="photobot-control-label photobot-control-label-right">→</span></button>
+                    <button class="photobot-control" data-direction="left" type="button" aria-label="Влево"><span class="photobot-control-label photobot-control-label-left">←</span></button>
+                </div>
+            </div>
+
+            <div class="photobot-footer">
+                <div class="photobot-footer-meta">
+                    <div>студент: Сим Анастасия</div>
+                    <div>кураторы: Цветников Николай, Комкова Анна</div>
+                </div>
+                <div class="photobot-footer-code">Б25ДЗ11</div>
+            </div>
+        </section>
+
+        <div class="help-modal" id="cameraHelpModal" aria-hidden="true">
+            <div class="help-modal-backdrop" id="cameraHelpBackdrop">
+                <div class="help-modal-card" role="dialog" aria-modal="true" aria-label="Инструкция">
+                    <img class="help-modal-image" src="images/предупр1.svg" alt="Инструкция по поиску аномалий">
+                </div>
+            </div>
+        </div>
+
+        <div class="help-modal" id="faceHelpModal" aria-hidden="true">
+            <div class="help-modal-backdrop" id="faceHelpBackdrop">
+                <div class="help-modal-card" role="dialog" aria-modal="true" aria-label="Инструкция теста">
+                    <img class="help-modal-image" src="images/предупр2.svg" alt="Инструкция по сравнению лиц">
+                </div>
+            </div>
+        </div>
+
+        <div class="screamer-overlay" id="screamer" aria-hidden="true">
+            <div class="screamer-visual"></div>
+            <div class="screamer-noise"></div>
+        </div>
+
+        <div class="diary-screamer" id="diaryScreamer" aria-hidden="true">
+            <div class="diary-screamer-visual"></div>
+            <div class="diary-screamer-noise"></div>
+        </div>
+
+        <div class="system-error" id="systemError" aria-hidden="true">
+            <div class="system-error-box">ОШИБКА СИСТЕМЫ</div>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>

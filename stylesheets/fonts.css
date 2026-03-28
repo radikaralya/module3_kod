@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Thin Pixe-l7';
+    src: url(../fonts/thin-pixel-7.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Thin Pixe-l7', sans-serif;
+}
