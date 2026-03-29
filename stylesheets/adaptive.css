@@ -4,56 +4,78 @@
     }
 
     .hero-screen {
-        margin-top: -13.5vw;
-        margin-bottom: -3vw;
+        margin-top: -4vw !important;
+        margin-bottom: 2vw !important;
     }
 
     .hero-frame {
-        min-height: 54vw;
-        aspect-ratio: 767 / 500;
+        min-height: 60vw !important;
+        aspect-ratio: auto !important;
+        background: #000 !important;
+    }
+
+    .hero-frame::after {
+        border-left: 1.9vw solid var(--button-red) !important;
+        border-right: 1.9vw solid var(--button-red) !important;
+    }
+
+    .hero-frame::before {
+        top: 1.4vw !important;
+        left: 1.9vw !important;
+        right: 1.9vw !important;
+        height: 4.5vw !important;
+        background: var(--button-red) !important;
     }
 
     .hero-content {
-        padding: 7.5% 5% 10%;
-        gap: 2.8vw;
+        padding: 14% 5% 9% !important;
+        gap: 4.4vw !important;
     }
 
     .hero-title {
-        min-height: 15vw;
-        font-size: 13vw;
-        line-height: 4;
+        min-height: 26vw !important;
+        font-size: 13.2vw !important;
+        line-height: 0.9 !important;
     }
 
     .hero-button {
-        min-width: 52vw;
-        height: 5.8vw;
-        padding: 0 2.2vw;
-        font-size: 9vw;
-        margin-top: -17vw;
+        min-width: 72vw !important;
+        height: 11.6vw !important;
+        padding: 0 4.4vw !important;
+        font-size: 12.6vw !important;
+        margin-top: 0 !important;
     }
 
     .hero-background {
-        inset: 10.5vw 0 0 0;
-        background-size: 100% 100%;
-        background-position: center top;
+        display: none !important;
+    }
+
+    .hero-background-mobile {
+        display: block !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        transform: translateY(-1.2vw) scaleY(1.04) !important;
     }
 
     .meat-top-left {
-        width: 50vw;
-        left: -28vw;
-        top: -19vw;
+        width: 34vw;
+        left: -17vw;
+        top: -10vw;
     }
 
     .meat-left {
-        width: 47vw;
-        left: -25vw;
-        top: 85%;
+        width: 32vw;
+        left: -19vw;
+        top: 76%;
     }
 
     .meat-right {
-        width: 45vw;
-        right: -25vw;
-        top: calc(54% + 9vw);
+        width: 32vw;
+        right: -18vw;
+        top: calc(54% + 6vw);
     }
 
     .camera-screen,
@@ -515,26 +537,66 @@
 
 @media (max-width: 430px) {
     .hero-frame {
-        min-height: 72vw;
-        aspect-ratio: 1920 / 1020;
+        min-height: 64vw !important;
+        aspect-ratio: auto !important;
+    }
+
+    .hero-frame::after {
+        border-left: 1.9vw solid var(--button-red) !important;
+        border-right: 1.9vw solid var(--button-red) !important;
+    }
+
+    .hero-frame::before {
+        top: 1.4vw !important;
+        left: 1.9vw !important;
+        right: 1.9vw !important;
+        height: 4.5vw !important;
+        background: var(--button-red) !important;
     }
 
     .hero-background {
-        inset: -2.6vw 0 0 0;
-        background-size: 100% 100%;
-        background-position: center top;
+        display: none !important;
+    }
+
+    .hero-background-mobile {
+        display: block !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        transform: translateY(-1.6vw) scaleY(1.05) !important;
     }
 
     .hero-title {
-        min-height: 14vw;
-        font-size: 6.5vw;
+        min-height: 12.2vw !important;
+        font-size: 11.6vw !important;
+        line-height: 0.88 !important;
     }
 
     .hero-button {
-        min-width: 54vw;
-        height: 6vw;
-        font-size: 5.8vw;
-        margin-top: -4vw;
+        min-width: 74vw !important;
+        height: 12.8vw !important;
+        font-size: 12vw !important;
+        margin-top: 0 !important;
+    }
+
+    .meat-top-left {
+        width: 31vw;
+        left: -16vw;
+        top: -8vw;
+    }
+
+    .meat-left {
+        width: 29vw;
+        left: -18vw;
+        top: 74%;
+    }
+
+    .meat-right {
+        width: 29vw;
+        right: -17vw;
+        top: calc(54% + 5vw);
     }
 
     .camera-stage {
